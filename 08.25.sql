@@ -39,3 +39,17 @@ create table 배송업체(
 
 alter table 고객 add 가입날짜 date;
 alter table 고객 drop column 가입날짜;
+
+ALTER TABLE 고객 ADD CONSTRAINT CHECK_AGE CHECK(나이>=20);
+ALTER TABLE 고객 DROP CONSTRAINT CHECK_AGE;
+DROP TABLE 배송업체;
+
+insert into 고객 values('apple','정소화', 20, 'gold', '학생');
+insert into 고객 values('banana','김지찬', 25, 'vip', '야구선수');
+insert into 고객 values('carrot','손흥민', 28, 'gold', '축구선수');
+insert into 고객 values('orange','오병민', 30, 'silver', '스트리머');
+insert into 고객 values('melon','전민재', 26, 'gold', '회사원');
+insert into 고객(고객아이디,고객이름,등급,직업) values('peach','오형준' 'gold', '교사');
+insert into 고객 values('pear','최원준',38 , 'silver', '버스기사');
+
+select * from 고객;
